@@ -4,37 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./app.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Online Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap" rel="stylesheet">
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Movie Recommendation App</title>
 </head>
 <body>
-    <header>
-            <h2>Recipe App</h2>
-            <div class="search-container">
-            <input 
-            id="search-input"
-            type="text"
-            placeholder="Search from Recipes..."
-            />
-            <button id="Search-Btn">Search</button>
-            </div>             
-    </header>
     <main>
-    <section id="Recipe-section">
-        <h3 class="Search-Result-Heading">Search Results</h3>
-        <div class="Recipe-Container">
-            <ul id="Recipe-list">
-           
-            </ul>
+    <section class="searchFields">
+        <div class="threeFields">
+          <div id="ratingDropdown">
+          <h4 class="dropdownHeading">RATING</h4>
+          <select id="ratingDropBtn">
+            <option value="6">All</option>
+            <option value="7">Above 7.0</option>
+            <option value="7.2">Above 7.2</option>
+            <option value="7.6">Above 7.6</option>
+            <option value="8">Above 8.0</option>
+            <option value="8.2">Above 8.2</option>
+          </select>
         </div>
-    </section>
-    <section id="Recipe-Details">
-        <h3 class="Recipe-Details-Heading">Recipe Details</h3>
-        <div id="Recipe-Details-Container">
-            
+    
+              <div id="yearDropdown">
+                <h4 class="dropdownHeading">YEAR</h4>
+                <input 
+                id="yearDropBtn"
+                type="text"
+                placeholder="Choose Year...">
+                
+              </div>
+    
+              <div id="langDropdown">
+                <h4 class="dropdownHeading">LANGUAGE</h4>
+                <select id="langDropBtn">
+                  <option value="">All</option>
+                  <option value="English">English</option>
+                  <option value="French">French</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Korean">Korean</option>
+                  <option value="Cantonese">Cantonese</option>
+                  <option value="Mandarin">Mandarin</option>
+                  <option value="Portuguese">Portuguese</option>
+                  <option value="Turkish">Turkish</option>
+                  <option value="Polish">Polish</option>
+                  <option value="Persian">Persian</option>
+                  <option value="Telugu">Telugu</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Danish">Danish</option>
+                </select>
+              </div>
+        </div>
+
+        
+          <div class="btnDiv">
+            <button id="searchBtn">Search</button>
+          </div>
+          <div>
+            <ul class="movieListHead">
+              <li class="movieHeading small">RANK</li>
+              <li class="movieHeading large">MOVIE</li>
+              <li class="movieHeading small">YEAR</li>
+            </ul>
+            <div id=searchedMovies>
+              
             </div>
+          </div>
     </section>
+
     </main>
+
+    
+    
+      
+    
 </body>
 </html>
