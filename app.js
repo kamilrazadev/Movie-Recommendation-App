@@ -51,9 +51,7 @@
             function(result){
                 const li = document.createElement("li");
                 li.innerHTML = `<h4>${result.title}<h4>`;
-                li.addEventListener("click", function(){
-                    recipeDetails(result)
-                });
+                
                 searchList.appendChild(li);
             }
         );
