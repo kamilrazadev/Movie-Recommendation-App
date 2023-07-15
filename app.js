@@ -8,7 +8,7 @@
     const searchButton = document.getElementById("searchBtn");
     const displayElem = document.getElementById("searchedMovies");
     
-
+userSearch();
 
     function userSearch(){
         const langValue = selectedLang.options[selectedLang.selectedIndex].value;
