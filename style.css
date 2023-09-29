@@ -84,6 +84,7 @@ main{
     font-family: 'Schibsted Grotesk', sans-serif;
     font-size: 12px;
     font-weight: bolder;
+    
 }
 .small{
     width: 10%;
@@ -111,5 +112,9 @@ main{
     padding: 2px;
     border: 1px solid rgba(107, 107, 107, 0.473);
     width: 6rem;
+    text-align: center;
+}
+.center {
+    width: 100%;
     text-align: center;
 }

@@ -14,7 +14,6 @@ userSearch();
         const langValue = selectedLang.options[selectedLang.selectedIndex].value;
         const ratingValue = selectedRating.options[selectedRating.selectedIndex].value;
         const yearValue = selectedYear.value;
-        console.log(yearValue);
         const searchResults = movies.filter(function (filteredMovie) {
             return (filteredMovie.original_language.includes(langValue) && 
                     filteredMovie.vote_average > ratingValue &&
@@ -29,26 +28,38 @@ userSearch();
         let i = 1;
         displayElem.innerHTML = "";
 
-        searchResults.forEach(function(movie) {
-            const ul = document.createElement("ul"); 
+        console.log(searchResults)
+
+        if(searchResults.length !== 0){
+            console.log("If Runing")
+            searchResults.forEach(function(movie) {
+                const ul = document.createElement("ul"); 
+                ul.className = "movieItem";
+                ul.innerHTML = `
+                <li class="small">${i}</li>
+                <li class="large"><h4 class="movieTitle">${movie.title}</h4><b class="rate">Ratings ${movie.vote_average}</b> | <i>${movie.original_language}</i></li>
+                <li class="small"><i>${movie.release_date.substring(0,4)}</i></li>
+               `
+                i++;
+                displayElem.appendChild(ul);
+            }
+            )
+        } else {
+            console.log("Else Runing")
+            const ul = document.createElement("ul");
             ul.className = "movieItem";
             ul.innerHTML = `
-            <li class="small">${i}</li>
-            <li class="large"><h4 class="movieTitle">${movie.title}</h4><b class="rate">Ratings ${movie.vote_average}</b> | <i>${movie.original_language}</i></li>
-            <li class="small"><i>${movie.release_date.substring(0,4)}</i></li>
-           `
-            i++;
+                <li class="center">No Movie Available</li>
+            `
             displayElem.appendChild(ul);
         }
-        );
-
-
-
     }
         
         
     
-
-    searchButton.addEventListener("click", userSearch);
+    selectedLang.addEventListener("change", userSearch)
+    selectedRating.addEventListener("change", userSearch)
+    selectedYear.addEventListener("input", userSearch)
+    // searchButton.addEventListener("click", userSearch);
 
 })();
